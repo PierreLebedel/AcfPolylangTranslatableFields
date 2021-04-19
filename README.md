@@ -16,7 +16,7 @@ This plugin add some fields types to the ACF choices, and when the form is saved
 
 When filling in the fields, a tab will be displayed for each of the Polylang configured languages.
 
-![content editing languages tabs](https://github.com/PierreLebedel/AcfPolylangTranslatableFields/blob/main/screenshots/tabs1.png?raw=true)
+![content editing languages tabs](https://github.com/PierreLebedel/AcfPolylangTranslatableFields/blob/main/screenshots/screenshot-post-tabs-01.png?raw=true)
 
 ## Installation
 
