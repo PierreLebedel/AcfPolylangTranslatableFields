@@ -1,0 +1,70 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ACF Polylang translatable fields\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-19 16:03+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.2; wp-5.7.1\n"
+"X-Domain: acfpll"
+
+#. Name of the plugin
+msgid "ACF Polylang translatable fields"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Adds translatable fields to ACF for non-translated contents using Polylang"
+msgstr ""
+
+#: classes/AcfPolylangFieldTrait.php:32
+msgid "Default language value"
+msgstr ""
+
+#: fields/AcfPolylangFieldEmail.php:16
+msgid "Email"
+msgstr ""
+
+#: classes/AcfPolylangFieldTrait.php:31
+msgid "Empty value"
+msgstr ""
+
+#: classes/AcfPolylangFieldTrait.php:26
+msgid "Empty value behavior"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://www.pierrelebedel.fr"
+msgstr ""
+
+#: fields/AcfPolylangFieldNumber.php:16
+msgid "Number"
+msgstr ""
+
+#. Author of the plugin
+msgid "Pierre Lebedel"
+msgstr ""
+
+#: fields/AcfPolylangFieldText.php:16
+msgid "Text"
+msgstr ""
+
+#: fields/AcfPolylangFieldTextarea.php:16
+msgid "Text Area"
+msgstr ""
+
+#: fields/AcfPolylangFieldUrl.php:16
+msgid "URL"
+msgstr ""
+
+#: classes/AcfPolylangFieldTrait.php:27
+msgid "Use the default language field value if empty?"
+msgstr ""
