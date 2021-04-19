@@ -141,8 +141,8 @@ if( !trait_exists('AcfPolylangFieldTrait') ){
 		public function input_admin_enqueue_scripts() {
 			$settings = AcfPolylangTranslatableFieldsPlugin::getSettings();
 
-			$url      = $settings['url'];
-			$version  = $settings['Version'];
+			$url     = $settings['url'];
+			$version = $settings['version'];
 			
 			// register & include JS
 			wp_register_script('acfpll', "{$url}assets/js/input.js", array('acf-input'), $version);
