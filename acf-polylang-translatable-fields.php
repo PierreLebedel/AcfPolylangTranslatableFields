@@ -4,7 +4,7 @@
  * Plugin Name: ACF Polylang translatable fields
  * Plugin URI: 
  * Description: Adds translatable fields to ACF for non-translated contents using Polylang
- * Version: 1.0.0
+ * Version: 1.0.2
  * Author: Pierre Lebedel
  * Author URI: https://www.pierrelebedel.fr
  * License: GPLv2 or later

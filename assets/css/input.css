@@ -48,6 +48,7 @@
 
 
 
-.acf-polylang-translatable-tabs .wp-tab-panel input{
+.acf-polylang-translatable-tabs .wp-tab-panel input,
+.acf-polylang-translatable-tabs .wp-tab-panel textarea{
     border-top-right-radius:0;
 }
