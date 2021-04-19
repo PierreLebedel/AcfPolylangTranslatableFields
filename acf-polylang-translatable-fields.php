@@ -4,13 +4,13 @@
  * Plugin Name: ACF Polylang translatable fields
  * Plugin URI: 
  * Description: Adds translatable fields to ACF for non-translated contents using Polylang
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: Pierre Lebedel
  * Author URI: https://www.pierrelebedel.fr
  * License: MIT
  * License URI: https://opensource.org/licenses/MIT
  * Text Domain: acfpll
- * Domain Path: /languages/
+ * Domain Path: /languages
  */
 
 if( !defined('ABSPATH') ) exit;
@@ -20,23 +20,20 @@ if( !class_exists('AcfPolylangTranslatableFieldsPlugin') ){
 	class AcfPolylangTranslatableFieldsPlugin {
 
 		public function __construct(){
-			add_action('init', array($this, 'init'));
+			add_action('plugin_loaded', array($this, 'loadTextdomain'));
 			add_action('acf/include_field_types', array($this, 'includeFields'));
 		}
 
 		public static function getSettings(){
 			return array(
-				'version' => '1.0.0',
+				'version' => '1.0.3',
 				'url'	  => plugin_dir_url(__FILE__),
 				'path'	  => plugin_dir_path(__FILE__)
 			);
 		}
 
-		public function init(){
-			$settings = self::getSettings();
-			load_plugin_textdomain('acfpll', false, dirname(plugin_basename(__FILE__)).'/languages'); 
-
-
+		public function loadTextdomain(){
+			load_plugin_textdomain('acfpll', false, dirname(plugin_basename(__FILE__)).'/languages/'); 
 		}
 	
 		public function includeFields( $version = false ) {
