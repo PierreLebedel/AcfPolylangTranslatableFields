@@ -7,9 +7,10 @@
  * Version: 1.0.2
  * Author: Pierre Lebedel
  * Author URI: https://www.pierrelebedel.fr
- * License: GPLv2 or later
- * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * License: MIT
+ * License URI: https://opensource.org/licenses/MIT
  * Text Domain: acfpll
+ * Domain Path: /languages/
  */
 
 if( !defined('ABSPATH') ) exit;
@@ -33,7 +34,9 @@ if( !class_exists('AcfPolylangTranslatableFieldsPlugin') ){
 
 		public function init(){
 			$settings = self::getSettings();
-			load_plugin_textdomain('acfpll', false, dirname(plugin_basename(__FILE__)).'/languages/'); 
+			load_plugin_textdomain('acfpll', false, dirname(plugin_basename(__FILE__)).'/languages'); 
+
+
 		}
 	
 		public function includeFields( $version = false ) {
