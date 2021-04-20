@@ -8,7 +8,6 @@
 		$('.acf-polylang-translatable-tabs .wp-tab-bar a').click(function(event){
 			event.preventDefault();
 
-			
 			// Limit effect to the container element.
 			var context = $(this).closest('.wp-tab-bar').parent();
 			$('.wp-tab-bar li', context).removeClass('wp-tab-active');
@@ -29,35 +28,10 @@
 		initializedTabs = true;
 	}
 	
-	function initialize_field( $field ) {
-
-		initialize_tabs();
-		
-		//$field.doStuff();
-
-	}
-	
-	
 	if( typeof acf.add_action !== 'undefined' ) {
-		
-		acf.add_action('ready_field/type=acf_polylang_text', initialize_field);
-		acf.add_action('append_field/type=acf_polylang_text', initialize_field);
-		
+		acf.add_action('ready', initialize_tabs);
 	} else {
-				
-		$(document).on('acf/setup_fields', function(e, postbox){
-			
-			$(postbox).find('.field[data-field_type="acf_polylang_text"]').each(function(){
-				initialize_field( $(this) );
-			});
-
-			$(postbox).find('.field[data-field_type="acf_polylang_textarea"]').each(function(){
-				initialize_field( $(this) );
-			});
-
-		
-		});
-	
+		initialize_tabs();
 	}
 
 })(jQuery);
