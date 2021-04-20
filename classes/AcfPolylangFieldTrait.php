@@ -60,7 +60,6 @@ if( !trait_exists('AcfPolylangFieldTrait') ){
 				
 					<div class="wp-tab-panel" id="<?php echo $field['key'].$lang->locale; ?>" <?php echo($lang->is_default)?'':'style="display: none;"'; ?>>
 					
-						<?php //echo '<pre>'.print_r($field,true).'</pre>'; ?>
 						<?php $this->renderLanguageLoopField($field, $lang->locale); ?>
 	
 					</div>
@@ -77,14 +76,40 @@ if( !trait_exists('AcfPolylangFieldTrait') ){
 			return parent::render_field($field);
 		}
 
-		public function load_value($json, $post_id, $field){
-			$values = json_decode($json, true);
-			return $values;
+		public function load_value($values_string, $post_id, $field){
+			$values_array = AcfPolylangFieldUtils::decodeValues($values_string, true);
+			return $values_array;
 		}
 
-		public function update_value($value, $post_id, $field){
-			$json = wp_json_encode($value);
-			return $json;
+		public function update_value($inputs, $post_id, $field){
+
+			$previous_values = get_field($field['key'], $post_id, false);
+			if(!is_array($previous_values)) $previous_values = array();
+		
+			if( is_array($inputs) ){
+				$valid_inputs = array();
+				if(!empty($inputs)){
+					foreach($inputs as $k=>$v){
+						$locale = AcfPolylangFieldUtils::getLocaleFormSlug($k);
+						$valid_inputs[ $locale ] = $v;
+					}
+				}
+				$values = array_merge($previous_values, $valid_inputs);
+
+			}else{
+				// if string/int value, we store on current user locale
+				$current = AcfPolylangFieldUtils::getCurrentLocale();
+				if(!$current){
+					$current = AcfPolylangFieldUtils::getDefaultLocale();
+				}
+
+				$values = array_merge($previous_values, array(
+					$current => $inputs,
+				));
+			}
+
+			$encoded = AcfPolylangFieldUtils::encodeValues($values);
+			return $encoded;
 		}
 
 		public function format_value($values, $post_id, $field){
@@ -99,7 +124,7 @@ if( !trait_exists('AcfPolylangFieldTrait') ){
 				$defaultlocale = $this->getDefaultLocale();
 				$value = AcfPolylangFieldUtils::getFieldValue($defaultlocale, $values);
 			}
-	
+
 			return $value;
 		}
 

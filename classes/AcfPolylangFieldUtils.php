@@ -50,12 +50,54 @@ if( !class_exists('AcfPolylangFieldUtils') ){
                     'locale' => $lang->locale,
                     'flag' => $lang->flag,
                     'name' => $lang->name,
+                    'slug' => $lang->slug,
                     'is_default' => ($lang->locale==$default),
                     'is_current' => ($lang->locale==$current),
                 );
             }
 
             return $languages;
+        }
+
+        public static function getLocaleFormSlug($slug){
+            $languages = self::getActivatedLanguages();
+            if( array_key_exists($slug, $languages) ){
+                return $slug;
+            }
+            foreach($languages as $lang){
+                if($lang->slug==$slug){
+                    return $lang->locale;
+                }
+            }
+            return false;
+        }
+
+        public static function encodeValues($values_array=array()){
+            $values_string = '';
+            if(!empty($values_array)){
+                foreach($values_array as $locale=>$value){
+                    if(empty($value)) continue;
+                    $values_string .= '<!--:'.$locale.'-->'.$value.'<!--:-->';
+                }
+            }
+            return $values_string;
+        }
+
+        public static function decodeValues($values_string=''){
+            //$locale_regex = '([a-z]{2}_[A-Z]{2})';
+            $string_regex = '/<!--:(\w{5})-->(.*)<!--:-->/U';
+            preg_match_all($string_regex, $values_string, $matches);
+            //dump($matches);
+
+            if(count($matches)==3){
+                $response = array();
+                foreach($matches[0] as $k=>$v){
+                    $response[ $matches[1][$k] ] = $matches[2][$k];
+                }
+                return $response;
+            }
+
+            return false;
         }
 
 	}
