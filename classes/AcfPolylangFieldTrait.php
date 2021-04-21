@@ -50,7 +50,7 @@ if( !trait_exists('AcfPolylangFieldTrait') ){
 					<li class="<?php echo($lang->is_default)?'wp-tab-active':''; ?>">
 						<a href="#<?php echo $field['key'].$lang->locale; ?>">
 							<?php echo $lang->flag; ?>
-							<?php echo $lang->name; ?>
+							<span><?php echo $lang->name; ?></span>
 						</a>
 					</li>
 					<?php endforeach; ?>

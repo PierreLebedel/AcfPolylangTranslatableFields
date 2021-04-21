@@ -9,7 +9,7 @@
 
 .acf-polylang-translatable-tabs ul.wp-tab-bar{
     position:absolute;
-    top:-21px;
+    top:-26px;
     right:0;
     margin-top:0;
     z-index:100;
@@ -20,8 +20,10 @@
     border-bottom-color:#8c8f94;
     background: #f6f7f7;
     margin:0;
-    padding:3px 5px 4px;
-    line-height:18px;
+    padding:0;
+    display:block;
+    float:left;
+    border-radius:2px 2px 0 0;
 }
 
 .acf-polylang-translatable-tabs ul.wp-tab-bar li.wp-tab-active{
@@ -30,9 +32,20 @@
     background: #fff;
 }
 
+.acf-polylang-translatable-tabs ul.wp-tab-bar li a{
+    display:block;
+    padding:3px 5px 4px;
+    line-height:18px;
+}
+
+
 .acf-polylang-translatable-tabs ul.wp-tab-bar li a:focus{
     outline:none;
     box-shadow:none;
+}
+
+#side-sortables .acf-polylang-translatable-tabs ul.wp-tab-bar li a span{
+    display:none;
 }
 
 
