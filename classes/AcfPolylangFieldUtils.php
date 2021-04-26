@@ -65,7 +65,7 @@ if( !class_exists('AcfPolylangFieldUtils') ){
                 return $slug;
             }
             foreach($languages as $lang){
-                if($lang->slug==$slug){
+                if( strtolower($lang->slug)==strtolower($slug) ){
                     return $lang->locale;
                 }
             }
