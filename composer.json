@@ -2,7 +2,7 @@
     "name": "pleb/acf-polylang-translatable-fields",
     "description": "Adds translatable fields to ACF for non-translated contents using Polylang",
     "type": "wordpress-plugin",
-    "version": "1.0.5",
+    "version": "1.0.7",
     "keywords": [ "wordpress", "wordpress-plugin", "polylang", "acf", "advanced-custom-fields" ],
     "homepage": "https://github.com/PierreLebedel/AcfPolylangTranslatableFields",
     "license": "MIT",
@@ -10,6 +10,7 @@
       {
         "name": "Pierre Lebedel",
         "homepage": "https://www.pierrelebedel.fr",
+        "email": "opensource@pierrelebedel.fr",
         "role": "Developer"
       }
     ],

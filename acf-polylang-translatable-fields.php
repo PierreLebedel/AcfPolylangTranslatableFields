@@ -1,10 +1,9 @@
 <?php
-
 /**
  * Plugin Name: ACF Polylang translatable fields
  * Plugin URI: 
  * Description: Adds translatable fields to ACF for non-translated contents using Polylang
- * Version: 1.0.5
+ * Version: 1.0.7
  * Author: Pierre Lebedel
  * Author URI: https://www.pierrelebedel.fr
  * License: MIT
@@ -26,7 +25,7 @@ if( !class_exists('AcfPolylangTranslatableFieldsPlugin') ){
 
 		public static function getSettings(){
 			return array(
-				'version' => '1.0.5',
+				'version' => '1.0.7',
 				'url'	  => plugin_dir_url(__FILE__),
 				'path'	  => plugin_dir_path(__FILE__)
 			);
