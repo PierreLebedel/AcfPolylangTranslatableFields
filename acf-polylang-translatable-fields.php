@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin Name: ACF Polylang translatable fields
  * Plugin URI: 

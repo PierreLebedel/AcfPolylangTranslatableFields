@@ -121,7 +121,7 @@ if( !trait_exists('AcfPolylangFieldTrait') ){
 			$value = AcfPolylangFieldUtils::getFieldValue($currentlocale, $values);
 			
 			if( empty($value) && $field['empty_value_behavior']==='default_lang' ) { 
-				$defaultlocale = $this->getDefaultLocale();
+				$defaultlocale = AcfPolylangFieldUtils::getDefaultLocale();
 				$value = AcfPolylangFieldUtils::getFieldValue($defaultlocale, $values);
 			}
 
@@ -141,7 +141,7 @@ if( !trait_exists('AcfPolylangFieldTrait') ){
 					/**
 					 * If we use default lang value, only the default lang value is required
 					 */
-					$defaultlocale = $this->getDefaultLocale();
+					$defaultlocale = AcfPolylangFieldUtils::getDefaultLocale();
 					if( !isset($values[$defaultlocale]) || empty($values[$defaultlocale]) ){
 						$valid = false;
 					}
