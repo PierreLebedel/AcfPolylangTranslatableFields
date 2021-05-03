@@ -129,6 +129,9 @@ if( !trait_exists('AcfPolylangFieldTrait') ){
 				$value = AcfPolylangFieldUtils::getFieldValue($defaultlocale, $values);
 			}
 
+			if (is_callable('parent::format_value')) {
+				return parent::format_value($value, $post_id, $field);
+			}
 			return $value;
 		}
 
