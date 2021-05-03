@@ -85,7 +85,7 @@ if( !class_exists('AcfPolylangFieldUtils') ){
 
         public static function decodeValues($values_string=''){
             //$locale_regex = '([a-z]{2}_[A-Z]{2})';
-            $string_regex = '/<!--:(\w{5})-->(.*)<!--:-->/U';
+            $string_regex = '/<!--:(\w{5})-->(.*)<!--:-->/Us';
             preg_match_all($string_regex, $values_string, $matches);
             //dump($matches);
 
