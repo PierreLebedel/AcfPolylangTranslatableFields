@@ -83,7 +83,7 @@ if( !trait_exists('AcfPolylangFieldTrait') ){
 
 		public function update_value($inputs, $post_id, $field){
 
-			$previous_values = get_field($field['key'], $post_id, false);
+			$previous_values = get_field($field['name'], $post_id, false);
 			if(!is_array($previous_values)) $previous_values = array();
 		
 			if( is_array($inputs) ){
