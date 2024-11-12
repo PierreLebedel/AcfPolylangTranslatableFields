@@ -27,6 +27,9 @@ This ACF field type is compatible with:
 
 == Changelog ==
 
+= 1.1.1 =
+* Fix deprecated "Use of parent in callables"
+
 = 1.1.0 =
 * Add $escape_html param to url field
 
