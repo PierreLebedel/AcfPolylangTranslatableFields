@@ -1,29 +1,35 @@
 {
-    "name": "pleb/acf-polylang-translatable-fields",
-    "description": "Adds translatable fields to ACF for non-translated contents using Polylang",
-    "type": "wordpress-plugin",
-    "version": "1.0.9",
-    "keywords": [ "wordpress", "wordpress-plugin", "polylang", "acf", "advanced-custom-fields" ],
-    "homepage": "https://github.com/PierreLebedel/AcfPolylangTranslatableFields",
-    "license": "MIT",
-    "authors": [
-      {
-        "name": "Pierre Lebedel",
-        "homepage": "https://www.pierrelebedel.fr",
-        "email": "opensource@pierrelebedel.fr",
-        "role": "Developer"
-      }
-    ],
-    "support": {
-      "issues": "https://github.com/PierreLebedel/AcfPolylangTranslatableFields/issues",
-      "wiki": "https://github.com/PierreLebedel/AcfPolylangTranslatableFields/wiki",
-      "source": "https://github.com/PierreLebedel/AcfPolylangTranslatableFields"
-    },
-    "require": {
-      "composer/installers": "~1.0",
-      "php" : ">=5.4"
-    },
-    "extra": {
-      "installer-name": "acf-polylang-translatable-fields"
+  "name": "pleb/acf-polylang-translatable-fields",
+  "description": "Adds translatable fields to ACF for non-translated contents using Polylang",
+  "type": "wordpress-plugin",
+  "version": "1.1.0",
+  "keywords": [
+    "wordpress",
+    "wordpress-plugin",
+    "polylang",
+    "acf",
+    "advanced-custom-fields"
+  ],
+  "homepage": "https://github.com/PierreLebedel/AcfPolylangTranslatableFields",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pierre Lebedel",
+      "homepage": "https://www.pierrelebedel.fr",
+      "email": "opensource@pierrelebedel.fr",
+      "role": "Developer"
     }
+  ],
+  "support": {
+    "issues": "https://github.com/PierreLebedel/AcfPolylangTranslatableFields/issues",
+    "wiki": "https://github.com/PierreLebedel/AcfPolylangTranslatableFields/wiki",
+    "source": "https://github.com/PierreLebedel/AcfPolylangTranslatableFields"
+  },
+  "require": {
+    "composer/installers": "~1.0",
+    "php": ">=5.4"
+  },
+  "extra": {
+    "installer-name": "acf-polylang-translatable-fields"
   }
+}
