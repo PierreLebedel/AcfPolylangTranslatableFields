@@ -29,7 +29,7 @@ if (!class_exists('AcfPolylangFieldUrl')) {
 			$this->renderLanguageField($field);
 		}
 
-		public function format_value($value, $post_id, $field, $escape_html)
+		public function format_value($values, $post_id, $field, $escape_html = false)
 		{
 			if (empty($values)) {
 				return '';
@@ -47,7 +47,13 @@ if (!class_exists('AcfPolylangFieldUrl')) {
 				$value = AcfPolylangFieldUtils::getFieldValue($defaultlocale, $values);
 			}
 
-			return parent::format_value($value, $post_id, $field, $escape_html);
+			$method = new \ReflectionMethod('acf_field_url', 'format_value');
+
+			if ($method->getNumberOfParameters() == 4) {
+				return parent::format_value($value, $post_id, $field, $escape_html);
+			}
+
+			return parent::format_value($value, $post_id, $field);
 		}
 	}
 
